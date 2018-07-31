@@ -20,34 +20,24 @@ export function Sudoku() {
 }
 
 Sudoku.prototype.checkPuzzle = function() {
-  // var allArrays = [[this.x1], [this.x2], [this.x3], [this.x4], [this.x5], [this.x6], [this.x7], [this.x8], [this.x9], [this.y1], [this.y2], [this.y3], [this.y4], [this.y5], [this.y6], [this.y7], [this.y8], [this.y9]]
-  var allArrays = 9
+  var allArrays = [this.x1, this.x2, this.x3, this.x4, this.x5, this.x6, this.x7, this.x8, this.x9, this.y1, this.y2, this.y3, this.y4, this.y5, this.y6, this.y7, this.y8, this.y9]
   var result = [];
 
-  for (var i = 0; i < allArrays.length; i++) {
-    if (i.includes(1 && 2 && 3 && 4 && 5 && 6 && 7 && 8 && 9))
+  allArrays.forEach(function(array) {
+    if(array.includes(1 && 2 && 3 && 4 && 5 && 6 && 7 && 8 && 9))
     {
-      result.push("Sudoku successfully completed");
+      result.push("Win");
     }
     else {
-      result.push("Incorrect solution");
+      result.push("Lose");
     }
-    return result;
-    }
+  });
 
-  //   if result.includes("Incorrect solution")
-  //   {
-  //     return false;
-  //   }
-  //   else {
-  //     return true;
-  // }
-  return allArrays
+  if (result.includes("Lose"))
+  {
+    return "Try again"
+  }
+  else {
+    return "You win"
+  }
 }
-
-// Sudoku.prototype.combineArrays = function() {
-//     allArrays = [this.x1, this.x2, this.x3, this.x4, this.x5, this.x6, this.x7, this.x8, this.x9, this.y1, this.y2, this.y3, this.y4, this.y5, this.y6, this.y7, this.y8, this.y9]
-//     return allArrays
-// }
-
-// x1, x2, x3, x4, x5, x6, x7, x8, x9, y1, y2, y3, y4, y5, y6, y7, y8, y9
